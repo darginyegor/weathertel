@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# OpenWeatherMap APP_ID
+/src/app/interceptors/app-id.const.ts

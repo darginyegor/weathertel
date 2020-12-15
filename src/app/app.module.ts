@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { WeatherListComponent } from './forecast/weather-list/weather-list.component';
 import { WeatherItemComponent } from './forecast/weather-list/weather-item/weather-item.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppIdInterceptor } from './interceptors/app-id.interceptor';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,16 @@ import { WeatherItemComponent } from './forecast/weather-list/weather-item/weath
     WeatherItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AppIdInterceptor,
+      multi   : true
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
