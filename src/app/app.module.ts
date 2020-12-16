@@ -11,6 +11,11 @@ import { RouterModule } from '@angular/router';
 
 import { AppIdInterceptor } from './interceptors/app-id.interceptor';
 
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+import localeRu from '@angular/common/locales/ru';
+registerLocaleData(localeRu);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +34,11 @@ import { AppIdInterceptor } from './interceptors/app-id.interceptor';
       provide : HTTP_INTERCEPTORS,
       useClass: AppIdInterceptor,
       multi   : true
-  },
+    },
+    {
+      provide: LOCALE_ID, 
+      useValue: 'ru'
+    }
   ],
   bootstrap: [AppComponent]
 })
