@@ -7,6 +7,7 @@ import { WeatherListComponent } from './forecast/weather-list/weather-list.compo
 import { WeatherItemComponent } from './forecast/weather-list/weather-item/weather-item.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppIdInterceptor } from './interceptors/app-id.interceptor';
 
@@ -20,7 +21,8 @@ import { AppIdInterceptor } from './interceptors/app-id.interceptor';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([])
   ],
   providers: [
     {

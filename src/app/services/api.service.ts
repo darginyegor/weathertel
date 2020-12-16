@@ -20,7 +20,8 @@ export class ApiService {
   public getForecast(city: string, units: 'metric' | 'standard' | 'imperial' = 'metric') {
     return this.get('forecast', {
       q: city,
-      units
+      units,
+      lang: 'ru'
     });
   }
 }

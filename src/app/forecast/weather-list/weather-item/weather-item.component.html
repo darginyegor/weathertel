@@ -1,17 +1,34 @@
 <span class="wt-weather-item__description">
-    {{item.weather[0].main}}
+    {{item.weather[0].description}}
 </span>
 <div class="wt-weather-item__general">
     <span class="wt-weather-item__temp">
-        {{item.main.temp}}
-        <span class="wt-weather-item__temp-units">
-            °С
+        <span class="wt-weather-item__temp-value">
+            {{item.main.temp | number:'.0-0'}}
         </span>
+        °С
     </span>
     <span class="wt-weather-item__wind">
-        {{item.wind.speed}} м/с
+        <img class="wt-weather-item__wind-arrow" 
+                src="assets/img/wind-arrow.svg" 
+                alt=""
+                [style.transform]="'rotate(' + item.wind.deg + 'deg)'">
+        <span class="wt-weather-item__wind-value">
+            {{item.wind.speed | number:'.0-0'}}
+        </span>
+        м/с
     </span>
     <span class="wt-weather-item__humidity">
-        {{item.main.humidity}} %
+        <img class="wt-weather-item__humidity-icon" src="assets/img/humidity.svg" alt="">
+        <span class="wt-weather-item__humidity-value">
+            {{item.main.humidity}}
+        </span>
+        %
+    </span>
+    <span class="wt-weather-item__time">
+        {{item.dt * 1000 | date:'HH:mm'}}
     </span>
 </div>
+<span class="wt-weather-item__precipitation">
+    вероятность осадков: {{item.pop | percent}}
+</span>

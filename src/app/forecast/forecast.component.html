@@ -1,7 +1,16 @@
-<div class="wt-forecats__controls">
-    <input [(ngModel)]="city" type="text" class="wt-forecast__input">
+<div class="wt-forecast__controls">
+    <input [(ngModel)]="city" 
+           type="text"
+           class="wt-input wt-forecast__input"
+           (keyup.enter)="getForecast()">
     <button class="wt-button wt-forecast__search" (click)="getForecast()">
         Погнали!
     </button>
 </div>
 <wt-weather-list [list]="forecast"></wt-weather-list>
+<p class="wt-forecast__error" *ngIf="cityNotFoundError">
+    Извините, но мы не нашли такой город. Должно быть, вы опечатались...
+</p>
+<p class="wt-forecast__error" *ngIf="error">
+    При загрузке погоды случилось нечто непредвиденное.
+</p>

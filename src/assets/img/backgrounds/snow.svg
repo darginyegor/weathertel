@@ -1,0 +1,26 @@
+<svg width="480" height="80" viewBox="0 0 480 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="480" height="80" fill="#E4F7FF"/>
+<circle cx="67" cy="33" r="4" fill="white"/>
+<circle cx="98" cy="47" r="4" fill="white"/>
+<circle cx="90" cy="25" r="4" fill="white"/>
+<circle cx="51" cy="12" r="4" fill="white"/>
+<circle cx="40" cy="41" r="4" fill="white"/>
+<circle cx="71" cy="57" r="4" fill="white"/>
+<circle cx="73" r="4" fill="white"/>
+<circle cx="106" cy="4" r="4" fill="white"/>
+<circle cx="159.239" cy="21.6029" r="4" transform="rotate(150 159.239 21.6029)" fill="white"/>
+<circle cx="125.392" cy="24.9785" r="4" transform="rotate(150 125.392 24.9785)" fill="white"/>
+<circle cx="143.321" cy="40.0311" r="4" transform="rotate(150 143.321 40.0311)" fill="white"/>
+<circle cx="183.596" cy="31.7894" r="4" transform="rotate(150 183.596 31.7894)" fill="white"/>
+<circle cx="178.622" cy="1.17466" r="4" transform="rotate(150 178.622 1.17466)" fill="white"/>
+<circle cx="143.775" cy="2.81828" r="4" transform="rotate(150 143.775 2.81828)" fill="white"/>
+<circle cx="170.543" cy="53.1817" r="4" transform="rotate(150 170.543 53.1817)" fill="white"/>
+<circle cx="139.964" cy="66.2176" r="4" transform="rotate(150 139.964 66.2176)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="480" height="80" fill="white"/>
+</clipPath>
+</defs>
+</svg>

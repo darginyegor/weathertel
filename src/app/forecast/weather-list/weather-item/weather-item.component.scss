@@ -1,16 +1,49 @@
 :host {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 24px;
-    height: 80px;
+    height: 96px;
+    margin: 0 24px;
+    border-bottom: thin solid lightgray;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.wt-weather-item__general {
+    display: flex;
+    align-items: baseline;
 }
 
 .wt-weather-item__temp {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.wt-weather-item__temp-value {
     font-size: 32px;
     font-weight: 500;
 }
 
-.wt-weather-item__temp-units {
+.wt-weather-item__wind {
+    color: #005099;
+    margin-right: 12px;
+}
+
+.wt-weather-item__wind-value {
+    font-weight: 500;
+}
+
+.wt-weather-item__humidity {
+    color: #4BA9FF;
+}
+
+.wt-weather-item__humidity-value {
+    font-weight: 500;
+}
+
+.wt-weather-item__time {
     font-size: 24px;
+    margin-left: auto;
 }

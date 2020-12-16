@@ -8,3 +8,31 @@ html, body {
 * {
     font-family: 'Rubik', sans-serif;
 }
+
+p, span {
+    font-size: 14px;
+}
+
+.wt-input {
+    padding: 10px 16px;
+    line-height: 20px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    margin-right: 12px;
+}
+
+.wt-button {
+    border: none;
+    font-size: 16px;
+    padding: 10px 12px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+    &:hover {
+        background-color: darkblue;
+    }
+}
