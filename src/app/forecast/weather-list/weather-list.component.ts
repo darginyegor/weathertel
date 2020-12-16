@@ -11,6 +11,15 @@ export class WeatherListComponent implements OnInit {
   @Input() list: WeatherItem[];
 
   constructor() { }
+  
+  differentDays(prevItem, item): boolean {
+    if (!prevItem) {
+      return true;
+    }
+    let prevItemDate = new Date(prevItem.dt_txt).getDate();
+    let itemDate = new Date(item.dt_txt).getDate();
+    return prevItemDate !== itemDate;
+  }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,15 @@
+:host {
+    display: block;
+}
+
+.ng-weather-list__separator {
+    z-index: 9;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 24px;
+    padding: 24px 0 12px;
+    background-color: white;
+    position: sticky;
+    top: 87px;
+    border-bottom: thin solid lightgray;
+}
