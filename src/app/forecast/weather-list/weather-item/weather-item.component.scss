@@ -11,6 +11,10 @@
     }
 }
 
+.wt-weather-item__description {
+    align-self: flex-end;
+}
+
 .wt-weather-item__general {
     display: flex;
     align-items: baseline;
@@ -28,7 +32,6 @@
 
 .wt-weather-item__wind {
     color: #005099;
-    margin-right: 12px;
 }
 
 .wt-weather-item__wind-value {
@@ -37,6 +40,7 @@
 
 .wt-weather-item__humidity {
     color: #4BA9FF;
+    margin-left: 12px;
 }
 
 .wt-weather-item__humidity-value {
@@ -45,5 +49,9 @@
 
 .wt-weather-item__time {
     font-size: 24px;
-    margin-left: auto;
+    margin-right: auto;
+}
+
+.wt-weather-item__precipitation {
+    align-self: flex-end;
 }

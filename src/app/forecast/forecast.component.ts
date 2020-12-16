@@ -3,6 +3,7 @@ import { ApiService } from '../services/api.service';
 import { WeatherItem } from '../interfaces/weather-item';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'wt-forecast',
@@ -24,6 +25,9 @@ export class ForecastComponent implements OnInit, OnDestroy {
   ) { }
 
   getForecast(): void {
+    if (!this.city) {
+      return;
+    }
     this.forecast = [];
     this.cityNotFoundError = false;
     this.error = false;
@@ -36,7 +40,7 @@ export class ForecastComponent implements OnInit, OnDestroy {
           }
         });
       },
-      error => {
+      (error: HttpErrorResponse) => {
         if (error.status === 404) {
           this.cityNotFoundError = true;
         } else {

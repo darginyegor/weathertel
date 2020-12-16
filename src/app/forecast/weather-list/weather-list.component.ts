@@ -12,7 +12,7 @@ export class WeatherListComponent implements OnInit {
 
   constructor() { }
   
-  differentDays(prevItem, item): boolean {
+  differentDays(prevItem: WeatherItem, item: WeatherItem): boolean {
     if (!prevItem) {
       return true;
     }
