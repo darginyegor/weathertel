@@ -1,1 +1,7 @@
-<p>forecast works!</p>
+<div class="wt-forecats__controls">
+    <input [(ngModel)]="city" type="text" class="wt-forecast__input">
+    <button class="wt-button wt-forecast__search" (click)="getForecast()">
+        Погнали!
+    </button>
+</div>
+<wt-weather-list [list]="forecast"></wt-weather-list>

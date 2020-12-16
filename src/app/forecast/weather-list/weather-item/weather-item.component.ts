@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { WeatherItem } from 'src/app/interfaces/weather-item';
 
 @Component({
   selector: 'wt-weather-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-item.component.scss']
 })
 export class WeatherItemComponent implements OnInit {
+
+  @Input() item: WeatherItem;
 
   constructor() { }
 

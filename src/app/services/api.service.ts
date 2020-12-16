@@ -12,15 +12,15 @@ export class ApiService {
   ) { }
 
   private get(url: string, params?: HttpParams | { [param: string]: string | string[]; }) {
-    console.log(environment.openWeatherApiUrl, `${environment.openWeatherApiUrl}/${url}`)
-    return this.http.get(`${environment.openWeatherApiUrl}/${url}`, {
+    return this.http.get(`${environment.openWeatherApiUrl}${url}`, {
       params: params
     });
   }
 
-  public getForecast(city: string) {
+  public getForecast(city: string, units: 'metric' | 'standard' | 'imperial' = 'metric') {
     return this.get('forecast', {
-      q: city
+      q: city,
+      units
     });
   }
 }

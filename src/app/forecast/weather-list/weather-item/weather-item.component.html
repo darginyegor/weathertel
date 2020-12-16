@@ -1,1 +1,17 @@
-<p>weather-item works!</p>
+<span class="wt-weather-item__description">
+    {{item.weather[0].main}}
+</span>
+<div class="wt-weather-item__general">
+    <span class="wt-weather-item__temp">
+        {{item.main.temp}}
+        <span class="wt-weather-item__temp-units">
+            °С
+        </span>
+    </span>
+    <span class="wt-weather-item__wind">
+        {{item.wind.speed}} м/с
+    </span>
+    <span class="wt-weather-item__humidity">
+        {{item.main.humidity}} %
+    </span>
+</div>
