@@ -1,3 +1,5 @@
+@import '../../../styles.variables.scss';
+
 :host {
     display: block;
 }
@@ -11,5 +13,5 @@
     background-color: white;
     position: sticky;
     top: 97px;
-    border-bottom: thin solid lightgray;
+    border-bottom: $border-default;
 }

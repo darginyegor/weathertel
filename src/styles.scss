@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import './styles.variables.scss';
 
 html, body {
     margin: 0;
@@ -19,7 +20,7 @@ p, span {
     line-height: 20px;
     font-size: 18px;
     padding: 8px 12px;
-    border: 1px solid lightgray;
+    border: $border-default;
     border-radius: 8px;
     margin-right: 12px;
 }
@@ -31,10 +32,10 @@ p, span {
     font-weight: 500;
     border-radius: 8px;
     color: white;
-    background-color: blue;
+    background-color: $accent;
     cursor: pointer;
     &:hover {
-        background-color: darkblue;
+        background-color: $accent-dark;
     }
 }
 

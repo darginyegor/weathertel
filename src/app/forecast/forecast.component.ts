@@ -4,6 +4,7 @@ import { WeatherItem } from '../interfaces/weather-item';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ForecastResponse } from '../interfaces/forecast-response';
 
 type SortOrder = 'date' | 'tasc' | 'tdecs';
 
@@ -18,7 +19,7 @@ export class ForecastComponent implements OnInit, OnDestroy {
   forecast: WeatherItem[];
   cityNotFoundError: boolean;
   error: boolean;
-  sortBy: SortOrder  = 'date';
+  sortBy: SortOrder = 'date';
 
   private queryParamsSubscription: Subscription;
 
@@ -36,7 +37,7 @@ export class ForecastComponent implements OnInit, OnDestroy {
     this.cityNotFoundError = false;
     this.error = false;
     this.api.getForecast(this.city).subscribe(
-      (response: any) => {
+      (response: ForecastResponse) => {
         this.forecast = response.list;
         if (this.sortBy != 'date') {
           this.sort();

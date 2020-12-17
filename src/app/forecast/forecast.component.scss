@@ -1,8 +1,10 @@
+@import '../../styles.variables.scss';
+
 :host {
     flex: auto;
     max-width: 480px;
     background-color: white;
-    border: thin solid lightgray;
+    border: $border-default;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .12);
     padding-bottom: 12px;
