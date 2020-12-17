@@ -1,5 +1,14 @@
 # Weathertel
 
+The app gets weather data from [OpenWeatherMap API](https://openweathermap.org/api) and displays a 5 days / 3 hours forecast. 
+
+To communicate with the API you need to provide your OpenWeatherMap APP_ID (API key). It must be exported as a constant from `src/app/interceptors/app-id.const.ts`:
+
+```TypeScript
+export const APP_ID = 'YOUR_APP_ID';
+```
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
 ## Development server
@@ -13,14 +22,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
