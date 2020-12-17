@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
+type SortOrder = 'date' | 'tasc' | 'tdecs';
+
 @Component({
   selector: 'wt-forecast',
   templateUrl: './forecast.component.html',
@@ -16,6 +18,8 @@ export class ForecastComponent implements OnInit, OnDestroy {
   forecast: WeatherItem[];
   cityNotFoundError: boolean;
   error: boolean;
+  sortBy: SortOrder  = 'date';
+
   private queryParamsSubscription: Subscription;
 
   constructor(
@@ -34,6 +38,9 @@ export class ForecastComponent implements OnInit, OnDestroy {
     this.api.getForecast(this.city).subscribe(
       (response: any) => {
         this.forecast = response.list;
+        if (this.sortBy != 'date') {
+          this.sort();
+        }
         this.router.navigate([], {
           queryParams: {
             city: this.city
@@ -48,6 +55,30 @@ export class ForecastComponent implements OnInit, OnDestroy {
         }
       }
     );
+  }
+
+  setSort(event: Event): void {
+    this.sort();
+  }
+
+  sort(): void {
+    const sortOrders: {
+      [order: string]: (a: WeatherItem, b: WeatherItem) => number
+    } = {
+      'date': (a, b) => {
+        return b.dt - a.dt;
+      },
+      'tasc': (a, b) => {
+        return a.main.temp - b.main.temp;
+      },
+      'tdesc': (a, b) => {
+        return b.main.temp - a.main.temp;
+      }
+    };
+
+    if (sortOrders[this.sortBy]) {
+      this.forecast.sort(sortOrders[this.sortBy]);
+    }
   }
 
   ngOnInit(): void {

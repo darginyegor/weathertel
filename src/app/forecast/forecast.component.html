@@ -1,12 +1,28 @@
 <div class="wt-forecast__controls">
-    <input [(ngModel)]="city" 
-           type="text"
-           placeholder="Например, Санкт-Петербург"
-           class="wt-input wt-forecast__input"
-           (keyup.enter)="getForecast()">
-    <button class="wt-button wt-forecast__search" (click)="getForecast()">
-        Погнали!
-    </button>
+    <div class="wt-forecast__search">
+        <input [(ngModel)]="city" 
+            type="text"
+            placeholder="Например, Якутск"
+            class="wt-input wt-forecast__input"
+            (keyup.enter)="getForecast()">
+        <button class="wt-button wt-forecast__search-button" (click)="getForecast()">
+            Погнали!
+        </button>
+    </div>
+    <p class="wt-forecast__sort" *ngIf="forecast">
+        сортировка:
+        <select class="wt-select" [(ngModel)]="sortBy" (ngModelChange)="setSort($event)">
+            <option value="date">
+                по дате
+            </option>
+            <option value="tdesc">
+                сначала теплее
+            </option>
+            <option value="tasc">
+                сначала холоднее
+            </option>
+        </select> 
+    </p>
 </div>
 <wt-weather-list [list]="forecast"></wt-weather-list>
 <p class="wt-forecast__info" *ngIf="!forecast">
