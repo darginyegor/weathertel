@@ -1,6 +1,6 @@
 <ng-container *ngFor="let item of list; let i = index">
     <p class="ng-weather-list__separator" *ngIf="differentDays(list[i-1], item)">
-        {{item.dt_txt | date:'d MMMM, EEEE'}}
+        {{item.dt | date:'d MMMM, EEEE'}}
     </p>
     <wt-weather-item [item]="item"></wt-weather-item>
 </ng-container>

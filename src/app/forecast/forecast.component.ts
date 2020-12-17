@@ -39,9 +39,16 @@ export class ForecastComponent implements OnInit, OnDestroy {
     this.api.getForecast(this.city).subscribe(
       (response: ForecastResponse) => {
         this.forecast = response.list;
+
+        let currentTimezoneOffset = new Date().getTimezoneOffset();
+        this.forecast.forEach(item => {
+          item.dt = (item.dt + response.city.timezone) * 1000 + (currentTimezoneOffset * 60000);
+        });
+
         if (this.sortBy != 'date') {
           this.sort();
         }
+
         this.router.navigate([], {
           queryParams: {
             city: this.city

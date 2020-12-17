@@ -16,8 +16,8 @@ export class WeatherListComponent implements OnInit {
     if (!prevItem) {
       return true;
     }
-    let prevItemDate = new Date(prevItem.dt_txt).getDate();
-    let itemDate = new Date(item.dt_txt).getDate();
+    let prevItemDate = new Date(prevItem.dt).getDate();
+    let itemDate = new Date(item.dt).getDate();
     return prevItemDate !== itemDate;
   }
 
