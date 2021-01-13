@@ -74,7 +74,7 @@ export class ForecastComponent implements OnInit, OnDestroy {
       [order: string]: (a: WeatherItem, b: WeatherItem) => number
     } = {
       'date': (a, b) => {
-        return b.dt - a.dt;
+        return a.dt - b.dt;
       },
       'tasc': (a, b) => {
         return a.main.temp - b.main.temp;

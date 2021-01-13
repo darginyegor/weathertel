@@ -2,7 +2,7 @@ import { WeatherItem } from './weather-item';
 
 export interface ForecastResponse {
     city: {
-        id: number,
+        id: number
         name: string,
         country: string,
         population: number,
@@ -13,9 +13,9 @@ export interface ForecastResponse {
             lat: number,
             lon: number
         }
-    },
-    cnt: number,
-    cod: string,
-    message: number,
-    list: WeatherItem[]
+    };
+    cnt: number;
+    cod: string;
+    message: number;
+    list: WeatherItem[];
 }
